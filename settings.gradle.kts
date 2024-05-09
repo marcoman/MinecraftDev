@@ -20,6 +20,9 @@
 
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version("0.7.0")
+    id("com.gradle.develocity") version("3.17.2")
+    id("com.gradle.common-custom-user-data-gradle-plugin") version "1.13"
+
 }
 
 rootProject.name = "MinecraftDev"
@@ -29,3 +32,23 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 include("mixin-test-data")
 
 startParameter.warningMode = WarningMode.All
+
+develocity {
+    server = "https://develocity-field.gradle.com"
+    allowUntrustedServer = false
+
+    buildScan {
+        capture { true }
+        uploadInBackground = true
+    }
+}
+
+
+buildCache {
+    local {
+        isEnabled = false
+    }
+    remote(develocity.buildCache) {
+        isEnabled = false
+    }
+}
