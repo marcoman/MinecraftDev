@@ -21,8 +21,7 @@
 plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version("0.7.0")
     id("com.gradle.develocity") version("3.17.2")
-    id("com.gradle.common-custom-user-data-gradle-plugin") version "1.13"
-
+    id("com.gradle.common-custom-user-data-gradle-plugin") version ("1.13")
 }
 
 rootProject.name = "MinecraftDev"
@@ -42,7 +41,6 @@ develocity {
         uploadInBackground = true
     }
 }
-
 
 buildCache {
     local {
