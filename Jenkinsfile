@@ -20,7 +20,7 @@ pipeline {
                 git branch: 'develocity-1',
                     credentialsId: 'github',
                     changelog: true,
-                    url: 'git@github.com:marcoman/MiecraftDev.git'
+                    url: 'git@github.com:marcoman/MinecraftDev.git'
             }
         }
         stage('Build') {
